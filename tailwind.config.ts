@@ -11,15 +11,18 @@ const config: Config = {
       sm: "390px",
       md: "768px",
       xl: "1280px",
-      "2xl": "1920px",
+      "2xl": "1560px",
+      "3xl": "1920px",
     },
     container: {
+      center: true,
       padding: {
         DEFAULT: "24px",
         sm: "24px",
         md: "64px",
         xl: "128px",
         "2xl": "128px",
+        "3xl": "256px",
       },
     },
     extend: {
