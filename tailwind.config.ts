@@ -10,6 +10,7 @@ const config: Config = {
     screens: {
       sm: "390px",
       md: "768px",
+      lg: "1024px",
       xl: "1280px",
       "2xl": "1560px",
       "3xl": "1920px",
@@ -19,7 +20,8 @@ const config: Config = {
       padding: {
         DEFAULT: "24px",
         sm: "24px",
-        md: "64px",
+        md: "74px",
+        lg: "74px",
         xl: "128px",
         "2xl": "128px",
         "3xl": "256px",

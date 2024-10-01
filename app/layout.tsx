@@ -29,9 +29,9 @@ export default function RootLayout({
       className={`${ubuntu.className} ${IBMPlexMono.className} bg-black-light`}
       lang="en"
     >
-      <body className="container">
+      <body>
         <Header />
-        <main>{children}</main>
+        <main className="container">{children}</main>
         <Footer />
       </body>
     </html>
