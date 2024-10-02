@@ -24,6 +24,10 @@
   li {
     list-style: none;
   }
+  p,
+  a {
+    @apply p-ubuntu;
+  }
 }
 @layer components {
   /*  Ubuntu */
@@ -65,7 +69,7 @@
     @apply text-white font-ubuntu font-[400] text-[24px]/[32px];
   }
   .media-mono {
-    @apply text-white text-white font-ubuntu font-[400] text-[16px]/[20px];
+    @apply text-white font-ubuntu font-[400] text-[16px]/[20px];
   }
   .p-mono {
     @apply text-white font-ubuntu font-[400] text-[16px]/[20px];

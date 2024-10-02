@@ -20,11 +20,11 @@ const config: Config = {
       padding: {
         DEFAULT: "24px",
         sm: "24px",
-        md: "74px",
-        lg: "74px",
-        xl: "128px",
+        md: "24px",
+        lg: "50px",
+        xl: "114px",
         "2xl": "128px",
-        "3xl": "256px",
+        "3xl": "128px",
       },
     },
     extend: {

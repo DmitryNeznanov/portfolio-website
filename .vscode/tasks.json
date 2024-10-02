@@ -4,10 +4,18 @@
     {
       "type": "npm",
       "script": "dev",
-      "group": "test",
+      "group": "build",
       "problemMatcher": [],
       "label": "npm: dev",
       "detail": "next dev"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build",
+      "detail": "next build"
     }
   ]
 }
