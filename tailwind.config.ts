@@ -42,6 +42,7 @@ const config: Config = {
           DEFAULT: "var(--blue)",
           dark: "var(--blue-dark)",
         },
+        orange: "var(--orange)",
       },
       fontFamily: {
         ubuntu: ["var(--font-ubuntu)"],
