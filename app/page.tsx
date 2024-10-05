@@ -54,9 +54,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Skills */}
       <section className="py-[64px] xl:py-[128px] bg-[url('/skills-bg.png')]">
+        <div className="hidden xl:block relative before:content-[url('/close-tag.svg')] before:absolute before:top-0 before:mt-[20px] before:right-0 before:left-[63%]"></div>
         <Scroll />
-        <div className="container xl:mt-[64px]">
+        <div className=" container xl:mt-[64px] ">
+          <div></div>
           <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
             <h2 className="h1-ubuntu text-jade capitalize">skills</h2>
             <Image
@@ -90,6 +93,35 @@ export default function Home() {
                   ></Image>
                   <h4 className="mt-[8px] text-black menu-mono">{title}</h4>
                   <p className="mt-[8px] text-black p-mono">{text}</p>
+                </article>
+              )
+            })}
+          </section>
+          <section className="max-w-[288px] md:max-w-[385px] xl:max-w-max mx-auto mt-[90px] flex flex-wrap  gap-y-[32px] gap-x-[64px] md:gap-x-[96px] xl:gap-x-[128px]">
+            {[
+              ["html5.svg", "html", "red"],
+              ["css3-alt.svg", "css", "blue-dark"],
+              ["node-js.svg", "js", "orange"],
+              ["react.svg", "react", "blue"],
+            ].map(([src, title, color], i) => {
+              return (
+                <article
+                  className="max-w-max flex flex-col items-center"
+                  key={i}
+                >
+                  <div
+                    className={`p-[24px] md:p-[40px] max-w-max rounded-full bg-${color}`}
+                  >
+                    <Image
+                      src={`/${src}`}
+                      width={64}
+                      height={64}
+                      alt={src}
+                    ></Image>
+                  </div>
+                  <h3 className={`mt-[24px] h2-mono uppercase text-${color}`}>
+                    {title}
+                  </h3>
                 </article>
               )
             })}
