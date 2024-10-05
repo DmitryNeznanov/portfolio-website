@@ -1,6 +1,12 @@
 import Image from "next/image"
 import Scroll from "./components/Scroll"
 
+import { Metadata } from "next"
+import WorksSlider from "./components/WorksSlider"
+export const metadata: Metadata = {
+  title: "Web-portfolio",
+  description: "This is a home page of Web-portfolio",
+}
 export default function Home() {
   return (
     <>
@@ -127,6 +133,23 @@ export default function Home() {
             })}
           </section>
         </div>
+      </section>
+      {/* Works */}
+      <section className="py-[64px] xl:py-[128px] bg-black">
+        <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
+          <h2 className="h1-ubuntu text-jade capitalize">works</h2>
+          <Image
+            className="mt-[16px]"
+            src="/line.svg"
+            width={250}
+            height={12}
+            alt="line"
+          ></Image>
+          <p className="mt-[16px] p-mono">
+            I had the pleasure of working with these awesome projects
+          </p>
+        </article>
+        <WorksSlider />
       </section>
     </>
   )
