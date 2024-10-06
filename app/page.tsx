@@ -64,8 +64,7 @@ export default function Home() {
       <section className="py-[64px] xl:py-[128px] bg-[url('/skills-bg.png')]">
         <div className="hidden xl:block relative before:content-[url('/close-tag.svg')] before:absolute before:top-0 before:mt-[20px] before:right-0 before:left-[63%]"></div>
         <Scroll />
-        <div className=" container xl:mt-[64px] ">
-          <div></div>
+        <div className="container xl:mt-[64px] ">
           <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
             <h2 className="h1-ubuntu text-jade capitalize">skills</h2>
             <Image
@@ -149,7 +148,101 @@ export default function Home() {
             I had the pleasure of working with these awesome projects
           </p>
         </article>
-        <WorksSlider />
+        <div className="mt-[84px]">
+          <WorksSlider />
+        </div>
+      </section>
+      {/* Contact  */}
+      <section className="py-[64px] xl:py-[128px] bg-black">
+        <Scroll />
+        <div className="container">
+          <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
+            <h2 className="h1-ubuntu text-jade capitalize">contact</h2>
+            <Image
+              className="mt-[16px]"
+              src="/line.svg"
+              width={250}
+              height={12}
+              alt="line"
+            ></Image>
+            <p className="mt-[16px] p-mono">
+              I’m currently available for freelance work
+            </p>
+          </article>
+          <section>
+            <h2
+              className="mt-[64px] xl:mt-[102px] max-w-max mx-auto px-[40px] py-[16px] bg-transparent menu-mono md:logo-mono text-jade md:text-jade capitalize 
+                        border-4 border-jade rounded-tl-[40px] rounded-br-[40px]"
+            >
+              send me a message
+            </h2>
+            <form
+              className="max-w-[1120px] mt-[64px] mx-auto"
+              action=""
+            >
+              <div className="flex flex-row gap-x-[24px] md:gap-x-[64px] xl:gap-x-[126px]">
+                <div className="flex w-[50%] flex-col">
+                  <label
+                    className="p-ubuntu text-jade"
+                    htmlFor="name"
+                  >
+                    Your name *
+                  </label>
+                  <input
+                    className="mt-[24px] input-primary"
+                    name="name"
+                    id="name"
+                    type="text"
+                    placeholder="Enter your name"
+                  ></input>
+                </div>
+                <div className="flex w-[50%] flex-col">
+                  <label
+                    className="p-ubuntu text-jade"
+                    htmlFor="email"
+                  >
+                    Your email *
+                  </label>
+                  <input
+                    className="mt-[24px] input-primary"
+                    name="email"
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                  ></input>
+                </div>
+              </div>
+              <div className="mt-[64px] flex flex-col">
+                <label
+                  className="p-ubuntu text-jade"
+                  htmlFor="email"
+                >
+                  Your message *
+                </label>
+                <textarea
+                  rows={6}
+                  className="mt-[24px] textarea-primary"
+                  name="message"
+                  id="message"
+                  placeholder="Enter your needs"
+                ></textarea>
+              </div>
+
+              <button
+                className="mt-[64px] mx-auto button-jade flex flex-row items-center gap-x-[16px]"
+                type="submit"
+              >
+                send message
+                <Image
+                  src="/icon-send.svg"
+                  width={24}
+                  height={24}
+                  alt="icon-send.svg"
+                ></Image>
+              </button>
+            </form>
+          </section>
+        </div>
       </section>
     </>
   )
