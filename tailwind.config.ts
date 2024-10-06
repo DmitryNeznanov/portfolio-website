@@ -48,6 +48,9 @@ const config: Config = {
         ubuntu: ["var(--font-ubuntu)"],
         IBMPlexMono: ["var(--font-IBM-plex-mono)"],
       },
+      boxShadow: {
+        xl: "-4px -4px 2px 1px rgba(18, 247, 214, 1)",
+      },
     },
   },
   plugins: [],

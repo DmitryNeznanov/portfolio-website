@@ -74,8 +74,10 @@ export default function Header() {
             </ul>
           </div>
         </nav>
-        <hr className="h-[1px] mt-[24px] xl:mt-[64px] border border-grey" />
       </header>
+      <div className="container">
+        <hr className="container h-[1px]  border border-grey" />
+      </div>
     </>
   )
 }

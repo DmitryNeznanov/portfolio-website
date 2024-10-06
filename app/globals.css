@@ -31,21 +31,26 @@
   }
 }
 @layer components {
+  /* Inputs */
   .input-primary {
     @apply pb-[8px] p-ubuntu text-white border-b border-ice bg-transparent outline-none placeholder:p-ubuntu;
   }
   .textarea-primary {
     @apply p-ubuntu text-white border-b border-ice bg-transparent outline-none placeholder:p-ubuntu;
   }
-  .button-black {
+  /* Buttons */
+  .button-transparent {
     @apply px-[32px] py-[16px] text-white font-ubuntu font-[400] text-[20px]/[24px] capitalize bg-transparent rounded-full border-[2px] border-jade hover:underline;
   }
   .button-jade {
     @apply px-[32px] py-[16px] text-black font-ubuntu font-[400] text-[20px]/[24px] capitalize bg-jade rounded-full border-[2px] border-jade hover:underline;
   }
+  .button-white {
+    @apply px-[32px] py-[16px] text-black font-ubuntu font-[400] text-[20px]/[24px] capitalize bg-white rounded-full hover:underline;
+  }
   /*  Ubuntu */
   .big-header-ubuntu {
-    @apply text-white font-ubuntu font-[400] text-[117px]/[134px];
+    @apply text-ice font-ubuntu font-[400] text-[117px]/[134px];
   }
   .h1-ubuntu {
     @apply text-white font-ubuntu font-[400] text-[64px]/[72px];

@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Scroll from "./components/Scroll"
-
 import { Metadata } from "next"
 import WorksSlider from "./components/WorksSlider"
+import Link from "next/link"
 export const metadata: Metadata = {
   title: "Web-portfolio",
   description: "This is a home page of Web-portfolio",
@@ -10,8 +10,164 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {/* Hero */}
+      <section
+        className="py-[64px] xl:pb-[128px] bg-black-light"
+        id="hero"
+      >
+        <div className="container">
+          <h1 className="hidden xl:block mx-auto w-max big-header-ubuntu capitalize">
+            developer
+          </h1>
+          <div className="3xl:flex 3xl:flex-row 3xl:items-center 3xl:gap-x-[128px]">
+            <section className="w-max mx-auto 3xl:mx-0 xl:mt-[64px] px-[24px] py-[37px] bg-transparent border-[4px] border-white rounded-tl-[160px] rounded-br-[160px] shadow-xl">
+              <article className="flex flex-col items-center text-center ">
+                <div className="border-[3px] border-jade rounded-full">
+                  <Image
+                    src="/sinan.png"
+                    width={96}
+                    height={96}
+                    alt="sinan.png"
+                  ></Image>
+                </div>
+                <hgroup className="mt-[16px]">
+                  <h4 className="logo-mono capitalize">sinan</h4>
+                  <p className="code-mono">Full-stack developer</p>
+                </hgroup>
+              </article>
+              <address className="mt-[32px] not-italic">
+                <ul className="flex flex-col gap-y-[16px]">
+                  {[
+                    [
+                      "icon-mail.svg",
+                      "abdurrahman_sinan@hotmail.com",
+                      "mailto:abdurrahman_sinan@hotmail.com",
+                    ],
+                    ["icon-map-pin.svg", "Turkey", ""],
+                    ["icon-briefcase.svg", "Full-time / Freelancer", ""],
+                    [
+                      "icon-link.svg",
+                      "www.sinantokmak.com",
+                      "https://google.com",
+                    ],
+                  ].map(([src, content, link], i) => {
+                    return (
+                      <li
+                        className="flex flex-row gap-x-[16px]"
+                        key={i}
+                      >
+                        <Image
+                          src={`/${src}`}
+                          width={14}
+                          height={14}
+                          alt={src}
+                        ></Image>
+                        <Link
+                          className={`${
+                            link === ""
+                              ? "pointer-events-none"
+                              : "hover:underline"
+                          } `}
+                          href={link}
+                          target="_blank"
+                        >
+                          <p className="code-mono">{content}</p>
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </address>
+              <ul className="mt-[16px] flex flex-row gap-x-[16px]">
+                {[["html"], ["css"], ["js"], ["react"]].map(([text], i) => {
+                  return (
+                    <li
+                      className="w-max px-[8px] uppercase bg-jade rounded-full"
+                      key={i}
+                    >
+                      <p className="text-black code-mono">{text}</p>
+                    </li>
+                  )
+                })}
+              </ul>
+              <a
+                className="w-max mt-[32px] button-white flex flex-row items-center gap-x-[16px]"
+                href="/cv/placeholder.cv"
+                download={true}
+              >
+                Download CV
+                <Image
+                  src="/icon-download.svg"
+                  width={20}
+                  height={20}
+                  alt="icon-download.svg"
+                ></Image>
+              </a>
+            </section>
+            <div className="xl:mt-[64px] xl:flex xl:flex-row xl:mx-auto 3xl:mx-0 xl:w-max xl:gap-x-[15px] 2xl:gap-x-[73px]">
+              <div className="flex flex-col">
+                <article className="mt-[64px] xl:mt-0 flex flex-col gap-y-[32px]">
+                  <div className="">
+                    <div className="code-mono text-ice">{"<h2>"}</div>
+                    <h3 className="pl-[16px] text-white h2-ubuntu lg:h1-ubuntu">
+                      Hey<br></br>
+                      i&apos;m <span className="text-jade">Sinan</span>,{" "}
+                      <br></br>
+                      Full-stack Developer
+                    </h3>
+                    <div className="code-mono text-ice">{"</h2>"}</div>
+                  </div>
+                  <div className="max-w-[700px]">
+                    <div className="code-mono text-ice">{"<p>"}</div>
+                    <p className="mt-[16px] pl-[16px] text-white p-mono">
+                      I help business grow by crafting amazing web experiences.
+                      If you’re looking for a developer that likes to get stuff
+                      done,
+                    </p>
+                    <div className="mt-[16px] code-mono text-ice">{"</p>"}</div>
+                  </div>
+                </article>
+                <a
+                  className="w-max mt-[16px] pl-[24px] flex flex-row items-center gap-x-[16px] h2-mono text-jade capitalize hover:underline "
+                  href="#contact"
+                >
+                  let’s talk
+                  <div className="p-[8px] bg-grey rounded-full">
+                    <Image
+                      src="/icon-mail.svg"
+                      width={24}
+                      height={24}
+                      alt="icon-mail.svg"
+                    ></Image>
+                  </div>
+                </a>
+              </div>
+              <section className="max-w-[215px] mx-auto xl:mx-0 xl:my-auto mt-[64px] px-[32px] py-[48px] flex flex-col gap-y-[48px] bg-black rounded-full">
+                {[
+                  ["4", "Programming Language"],
+                  ["6", "development tools"],
+                  ["8", "years of experience"],
+                ].map(([number, text], i) => {
+                  return (
+                    <article
+                      className="flex flex-row items-center gap-x-[16px] capitalize"
+                      key={i}
+                    >
+                      <p className="number-mono text-jade">{number}</p>
+                      <h5 className="p-mono text-white">{text}</h5>
+                    </article>
+                  )
+                })}
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* About  */}
-      <section className="py-[64px] xl:py-[128px] bg-[url('/about-bg.png')]">
+      <section
+        className="py-[64px] xl:py-[128px] bg-[url('/about-bg.png')]"
+        id="about"
+      >
         <Scroll />
         <div className="container xl:mt-[128px] flex flex-col 3xl:flex-row 3xl:justify-between">
           <div className="3xl:py-[37.5px] mx-auto max-w-max">
@@ -61,7 +217,10 @@ export default function Home() {
         </div>
       </section>
       {/* Skills */}
-      <section className="py-[64px] xl:py-[128px] bg-[url('/skills-bg.png')]">
+      <section
+        className="py-[64px] xl:py-[128px] bg-[url('/skills-bg.png')]"
+        id="skills"
+      >
         <div className="hidden xl:block relative before:content-[url('/close-tag.svg')] before:absolute before:top-0 before:mt-[20px] before:right-0 before:left-[63%]"></div>
         <Scroll />
         <div className="container xl:mt-[64px] ">
@@ -134,7 +293,10 @@ export default function Home() {
         </div>
       </section>
       {/* Works */}
-      <section className="py-[64px] xl:py-[128px] bg-black">
+      <section
+        className="py-[64px] xl:py-[128px] bg-black"
+        id="works"
+      >
         <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
           <h2 className="h1-ubuntu text-jade capitalize">works</h2>
           <Image
@@ -153,9 +315,12 @@ export default function Home() {
         </div>
       </section>
       {/* Contact  */}
-      <section className="py-[64px] xl:py-[128px] bg-black">
+      <section
+        className="py-[64px] bg-black"
+        id="contact"
+      >
         <Scroll />
-        <div className="container">
+        <div className="container mt-[64px]">
           <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
             <h2 className="h1-ubuntu text-jade capitalize">contact</h2>
             <Image
