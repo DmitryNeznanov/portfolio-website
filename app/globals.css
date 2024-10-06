@@ -12,7 +12,7 @@
   --red: #e54f26;
   --blue: #28a9e0;
   --blue-dark: #0c73b8;
-  --orange: #E7A020;
+  --orange: #e7a020;
 }
 
 @layer base {
@@ -31,6 +31,18 @@
   }
 }
 @layer components {
+  .input-primary {
+    @apply pb-[8px] p-ubuntu text-white border-b border-ice bg-transparent outline-none placeholder:p-ubuntu;
+  }
+  .textarea-primary {
+    @apply p-ubuntu text-white border-b border-ice bg-transparent outline-none placeholder:p-ubuntu;
+  }
+  .button-black {
+    @apply px-[32px] py-[16px] text-white font-ubuntu font-[400] text-[20px]/[24px] capitalize bg-transparent rounded-full border-[2px] border-jade hover:underline;
+  }
+  .button-jade {
+    @apply px-[32px] py-[16px] text-black font-ubuntu font-[400] text-[20px]/[24px] capitalize bg-jade rounded-full border-[2px] border-jade hover:underline;
+  }
   /*  Ubuntu */
   .big-header-ubuntu {
     @apply text-white font-ubuntu font-[400] text-[117px]/[134px];
@@ -41,9 +53,7 @@
   .h2-ubuntu {
     @apply text-white font-ubuntu font-[400] text-[32px]/[36px];
   }
-  .button-primary {
-    @apply text-white font-ubuntu font-[400] text-[20px]/[24px];
-  }
+
   .article-ubuntu {
     @apply text-white font-ubuntu font-[300] text-[16px]/[32px];
   }
