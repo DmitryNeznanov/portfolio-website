@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Web-portfolio",
   description: "This is a home page of Web-portfolio",
 }
-export default function Home() {
+export default async function Home() {
   return (
     <>
       {/* Hero */}

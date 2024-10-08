@@ -5,6 +5,7 @@
 - hgroup
 - public folder
 - Navigation
+- img footer
 - 
 ### Quistions ?
 
