@@ -10,16 +10,21 @@ const config: Config = {
     screens: {
       sm: "390px",
       md: "768px",
+      lg: "1024px",
       xl: "1280px",
-      "2xl": "1920px",
+      "2xl": "1560px",
+      "3xl": "1920px",
     },
     container: {
+      center: true,
       padding: {
         DEFAULT: "24px",
         sm: "24px",
-        md: "64px",
-        xl: "128px",
+        md: "24px",
+        lg: "50px",
+        xl: "114px",
         "2xl": "128px",
+        "3xl": "128px",
       },
     },
     extend: {
@@ -37,10 +42,14 @@ const config: Config = {
           DEFAULT: "var(--blue)",
           dark: "var(--blue-dark)",
         },
+        orange: "var(--orange)",
       },
       fontFamily: {
         ubuntu: ["var(--font-ubuntu)"],
         IBMPlexMono: ["var(--font-IBM-plex-mono)"],
+      },
+      boxShadow: {
+        xl: "-4px -4px 2px 1px rgba(18, 247, 214, 1)",
       },
     },
   },

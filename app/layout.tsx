@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+
 import { Ubuntu, IBM_Plex_Mono } from "next/font/google"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -29,7 +30,7 @@ export default function RootLayout({
       className={`${ubuntu.className} ${IBMPlexMono.className} bg-black-light`}
       lang="en"
     >
-      <body className="container">
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />
