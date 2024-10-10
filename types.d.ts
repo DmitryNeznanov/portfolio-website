@@ -3,7 +3,7 @@ interface Post {
   title: string
   body: string
   date: Date
-  tags: string[] | string
+  tags: string[]
   read: number
   author: string
   img: {

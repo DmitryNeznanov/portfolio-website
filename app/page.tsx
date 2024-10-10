@@ -3,11 +3,18 @@ import Scroll from "./components/Scroll"
 import { Metadata } from "next"
 import WorksSlider from "./components/WorksSlider"
 import Link from "next/link"
+import db from "@/lib/mongodb"
 export const metadata: Metadata = {
   title: "Web-portfolio",
   description: "This is a home page of Web-portfolio",
 }
 export default async function Home() {
+  const posts = (await db
+    .collection("posts")
+    .find()
+    .sort({ date: 1 })
+    .toArray()) as Post[]
+  const post = posts[0]
   return (
     <>
       {/* Hero */}
@@ -312,6 +319,105 @@ export default async function Home() {
         </article>
         <div className="mt-[84px]">
           <WorksSlider />
+        </div>
+      </section>
+      {/* Blogs */}
+      <section
+        className="py-[64px] xl:py-[128px]"
+        id="blogs"
+      >
+        <Scroll />
+        <div className="container">
+          <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
+            <h2 className="h1-ubuntu text-jade capitalize">blogs</h2>
+            <Image
+              className="mt-[16px]"
+              src="/line.svg"
+              width={250}
+              height={12}
+              alt="line"
+            ></Image>
+            <p className="mt-[16px] p-mono">
+              My thoughts on technology and business, welcome to subscribe
+            </p>
+          </article>
+          <section className="max-w-[1052px] mx-auto mt-[64px] border-t border-white">
+            <article
+              className="py-[32px] px-[14px] flex flex-col md:flex-row items-center md:items-start gap-y-[32px] md:gap-y-0 md:gap-x-[32px] border-b border-white"
+              key={post._id}
+            >
+              <div className="">
+                <Image
+                  className="min-w-[120px] min-h-[120px]"
+                  src={post.img.src}
+                  width={120}
+                  height={120}
+                  alt={post.img.alt}
+                ></Image>
+              </div>
+              <div>
+                <h2 className="h2-ubuntu text-jade">{post.title}</h2>
+                <p className="mt-[24px] p-ubuntu">{post.body}</p>
+                <Link
+                  className="group mt-[24px] block p-ubuntu text-jade"
+                  href={`/blog/${JSON.parse(JSON.stringify(post._id))}`}
+                >
+                  <span className="group-hover:no-underline underline underline-offset-4 decoration-white">
+                    Read More
+                  </span>{" "}
+                  &gt;&gt;
+                </Link>
+                <footer className="mt-[24px] flex flex-col md:flex-row gap-x-[8px] capitalize">
+                  <div>
+                    <p className="w-max px-[8px] py-[4px] label-ubuntu-light bg-grey rounded-full">
+                      {post.tags[0]}
+                    </p>
+                  </div>
+                  <div className="mt-[16px] md:mt-0 flex flex-row items-center gap-x-[8px]">
+                    <p className="flex flex-row gap-x-[8px] label-ubuntu-medium text-[12px] md:text-[14px]">
+                      text{" "}
+                      <span className="label-ubuntu-light text-[12px] md:text-[14px]">
+                        {post.author}
+                      </span>
+                    </p>
+                    <p className="label-ubuntu-medium text-[12px] md:text-[14px]">
+                      date{" "}
+                      <time
+                        className="label-ubuntu-light text-[12px] md:text-[14px]"
+                        dateTime={new Date(post.date).toISOString()}
+                      >
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </time>
+                    </p>
+                    <p className="label-ubuntu-medium text-[12px] md:text-[14px]">
+                      read{" "}
+                      <span className="label-ubuntu-light text-[12px] md:text-[14px]">
+                        {post.read} min
+                      </span>
+                    </p>
+                  </div>
+                </footer>
+              </div>
+            </article>
+          </section>
+          <div className="w-max mx-auto mt-[64px] flex flex-col md:flex-row items-center gap-x-[32px] gap-y-[32px]">
+            <Link
+              className="block button-jade"
+              href="/blog"
+            >
+              View More
+            </Link>
+            <Link
+              className="block button-transparent"
+              href="/#contact"
+            >
+              Subscribe
+            </Link>
+          </div>
         </div>
       </section>
       {/* Contact  */}

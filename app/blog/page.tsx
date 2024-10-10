@@ -1,8 +1,19 @@
 import db from "@/lib/mongodb"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+const Metadata: Metadata = {
+  title: "Web-portfolio | Blog Page",
+  description: "Blog page with posts",
+}
+
 export default async function Blog() {
-  const posts = (await db.collection("posts").find().toArray()) as Post[]
+  const posts = (await db
+    .collection("posts")
+    .find()
+    .sort({ date: 1 })
+    .toArray()) as Post[]
   return (
     <section className="container py-[64px] xl:pt-[128px] ">
       <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
@@ -24,7 +35,7 @@ export default async function Blog() {
       >
         Subscribe My Blogs
       </Link>
-      <section className="mx-auto flex flex-col gap-y-[64px] max-w-[1052px] mt-[64px] border-t border-white">
+      <section className="max-w-[1052px] mx-auto flex flex-col gap-y-[64px] mt-[64px] border-t border-white">
         {posts.map((post: Post) => {
           return (
             <article

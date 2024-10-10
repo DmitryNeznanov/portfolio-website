@@ -11,6 +11,5 @@
 
 - Slider ?
 - Rem ?
-- fix
 
 ### Draft
