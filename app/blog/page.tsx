@@ -20,7 +20,7 @@ export default async function Blog() {
         <h2 className="h1-ubuntu text-jade capitalize">blogs</h2>
         <Image
           className="mt-[16px]"
-          src="/line.svg"
+          src="/shape/line.svg"
           width={250}
           height={12}
           alt="line"

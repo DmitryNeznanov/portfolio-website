@@ -15,11 +15,11 @@ export default function WorksSlider() {
       modules={[Navigation, Pagination]}
     >
       {[
-        ["slider-image.png"],
-        ["slider-image.png"],
-        ["slider-image.png"],
-        ["slider-image.png"],
-        ["slider-image.png"],
+        ["png/slider-image.png"],
+        ["png/slider-image.png"],
+        ["png/slider-image.png"],
+        ["png/slider-image.png"],
+        ["png/slider-image.png"],
       ].map(([src], i) => {
         return (
           <SwiperSlide
@@ -30,7 +30,7 @@ export default function WorksSlider() {
               src={`/${src}`}
               width={570}
               height={350}
-              alt=""
+              alt="slider-img.png"
             ></Image>
           </SwiperSlide>
         )

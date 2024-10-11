@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="container pb-[32px] pt-[24px] xl:py-[16px] flex flex-col 2xl:flex-row 2xl:justify-between items-center gap-y-[24px]">
         <ul className="flex flex-row gap-x-[32px] xl:order-3">
           {[
-            ["icon-instagram-black.svg", "https://www.instagram.com/"],
-            ["icon-discord-black.svg", "https://discord.com/"],
-            ["icon-github-black.svg", "https://discord.com/"],
+            ["icon/icon-instagram-black.svg", "https://www.instagram.com/"],
+            ["icon/icon-discord-black.svg", "https://discord.com/"],
+            ["icon/icon-github-black.svg", "https://discord.com/"],
           ].map(([src, link], i) => {
             return (
               <li key={i}>
@@ -20,7 +20,7 @@ export default function Footer() {
                 >
                   <Image
                     className="block mx-auto"
-                    src={src}
+                    src={`/${src}`}
                     alt={src}
                     key={i}
                     width={16}

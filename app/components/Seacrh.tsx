@@ -20,7 +20,7 @@ export default function Seacrh() {
             id="showDialogBtn"
           >
             <Image
-              src="/icon-search.svg"
+              src="/icon/icon-search.svg"
               width={20}
               height={20}
               alt="search"
@@ -29,7 +29,7 @@ export default function Seacrh() {
         </div>
         <div className="lg:hidden ml-[16px] lg:mx-[32px] md:mx-[64px] flex items-center">
           <Image
-            src="/icon-search-white.svg"
+            src="/icon/icon-search-white.svg"
             width={20}
             height={20}
             alt="search"

@@ -4,6 +4,7 @@ import { Metadata } from "next"
 import WorksSlider from "./components/WorksSlider"
 import Link from "next/link"
 import db from "@/lib/mongodb"
+import NavigationBar from "./components/NavigationBar"
 export const metadata: Metadata = {
   title: "Web-portfolio",
   description: "This is a home page of Web-portfolio",
@@ -23,6 +24,9 @@ export default async function Home() {
         id="hero"
       >
         <div className="container">
+          <div className="hidden lg:block fixed -ml-[66px]">
+            <NavigationBar />
+          </div>
           <h1 className="hidden xl:block mx-auto w-max big-header-ubuntu capitalize">
             developer
           </h1>
@@ -31,10 +35,11 @@ export default async function Home() {
               <article className="flex flex-col items-center text-center ">
                 <div className="border-[3px] border-jade rounded-full">
                   <Image
-                    src="/sinan.png"
+                    src="/png/sinan.png"
                     width={96}
                     height={96}
                     alt="sinan.png"
+                    
                   ></Image>
                 </div>
                 <hgroup className="mt-[16px]">
@@ -46,14 +51,14 @@ export default async function Home() {
                 <ul className="flex flex-col gap-y-[16px]">
                   {[
                     [
-                      "icon-mail.svg",
+                      "icon/icon-mail.svg",
                       "abdurrahman_sinan@hotmail.com",
                       "mailto:abdurrahman_sinan@hotmail.com",
                     ],
-                    ["icon-map-pin.svg", "Turkey", ""],
-                    ["icon-briefcase.svg", "Full-time / Freelancer", ""],
+                    ["icon/icon-map-pin.svg", "Turkey", ""],
+                    ["icon/icon-briefcase.svg", "Full-time / Freelancer", ""],
                     [
-                      "icon-link.svg",
+                      "icon/icon-link.svg",
                       "www.sinantokmak.com",
                       "https://google.com",
                     ],
@@ -68,6 +73,7 @@ export default async function Home() {
                           width={14}
                           height={14}
                           alt={src}
+                          
                         ></Image>
                         <Link
                           className={`${
@@ -104,10 +110,11 @@ export default async function Home() {
               >
                 Download CV
                 <Image
-                  src="/icon-download.svg"
+                  src="/icon/icon-download.svg"
                   width={20}
                   height={20}
                   alt="icon-download.svg"
+                  
                 ></Image>
               </a>
             </section>
@@ -141,10 +148,11 @@ export default async function Home() {
                   let’s talk
                   <div className="p-[8px] bg-grey rounded-full">
                     <Image
-                      src="/icon-mail.svg"
+                      src="/icon/icon-mail.svg"
                       width={24}
                       height={24}
                       alt="icon-mail.svg"
+                      
                     ></Image>
                   </div>
                 </a>
@@ -172,7 +180,7 @@ export default async function Home() {
       </section>
       {/* About  */}
       <section
-        className="py-[64px] xl:py-[128px] bg-[url('/about-bg.png')]"
+        className="py-[64px] xl:py-[128px] bg-[url('/png/about-bg.png')]"
         id="about"
       >
         <Scroll />
@@ -215,30 +223,32 @@ export default async function Home() {
           <div className="mt-[64px] xl:mt-[128px] 3xl:mt-0">
             <Image
               className="block mx-auto max-w-[272px] max-h-[364px] md:max-w-[462px] md:max-h-[556px] 2xl:max-h-full 2xl:h-full rounded-[16px]"
-              src="/about.png"
+              src="/png/about.png"
               width={462}
               height={630}
               alt="about"
+              
             ></Image>
           </div>
         </div>
       </section>
       {/* Skills */}
       <section
-        className="py-[64px] xl:py-[128px] bg-[url('/skills-bg.png')]"
+        className="py-[64px] xl:py-[128px] bg-[url('/png/skills-bg.png')]"
         id="skills"
       >
-        <div className="hidden xl:block relative before:content-[url('/close-tag.svg')] before:absolute before:top-0 before:mt-[20px] before:right-0 before:left-[63%]"></div>
+        <div className="hidden xl:block relative before:content-[url('/shape/close-tag.svg')] before:absolute before:top-0 before:mt-[20px] before:right-0 before:left-[63%]"></div>
         <Scroll />
         <div className="container xl:mt-[64px] ">
           <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
             <h2 className="h1-ubuntu text-jade capitalize">skills</h2>
             <Image
               className="mt-[16px]"
-              src="/line.svg"
+              src="/shape/line.svg"
               width={250}
               height={12}
               alt="line"
+              
             ></Image>
             <p className="mt-[16px] p-mono">
               I am striving to never stop learning and improving
@@ -246,8 +256,8 @@ export default async function Home() {
           </article>
           <section className="mx-auto max-w-[720px] mt-[64px] flex flex-col md:flex-row items-center justify-center xl:justify-between gap-[32px]">
             {[
-              ["icon-monitor.svg", "Web Development", "HTML·CSS·JS·REACT"],
-              ["icon-smartphone.svg", "App Development", "iOS·Android"],
+              ["icon/icon-monitor.svg", "Web Development", "HTML·CSS·JS·REACT"],
+              ["icon/icon-smartphone.svg", "App Development", "iOS·Android"],
             ].map(([src, title, text], i) => {
               return (
                 <article
@@ -261,6 +271,7 @@ export default async function Home() {
                     width={32}
                     height={32}
                     alt={src}
+                    
                   ></Image>
                   <h4 className="mt-[8px] text-black menu-mono">{title}</h4>
                   <p className="mt-[8px] text-black p-mono">{text}</p>
@@ -270,10 +281,10 @@ export default async function Home() {
           </section>
           <section className="max-w-[288px] md:max-w-[385px] xl:max-w-max mx-auto mt-[90px] flex flex-wrap  gap-y-[32px] gap-x-[64px] md:gap-x-[96px] xl:gap-x-[128px]">
             {[
-              ["html5.svg", "html", "red"],
-              ["css3-alt.svg", "css", "blue-dark"],
-              ["node-js.svg", "js", "orange"],
-              ["react.svg", "react", "blue"],
+              ["icon/html5.svg", "html", "red"],
+              ["icon/css3-alt.svg", "css", "blue-dark"],
+              ["icon/node-js.svg", "js", "orange"],
+              ["icon/react.svg", "react", "blue"],
             ].map(([src, title, color], i) => {
               return (
                 <article
@@ -288,6 +299,7 @@ export default async function Home() {
                       width={64}
                       height={64}
                       alt={src}
+                      
                     ></Image>
                   </div>
                   <h3 className={`mt-[24px] h2-mono uppercase text-${color}`}>
@@ -304,21 +316,25 @@ export default async function Home() {
         className="py-[64px] xl:py-[128px] bg-black"
         id="works"
       >
-        <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
-          <h2 className="h1-ubuntu text-jade capitalize">works</h2>
-          <Image
-            className="mt-[16px]"
-            src="/line.svg"
-            width={250}
-            height={12}
-            alt="line"
-          ></Image>
-          <p className="mt-[16px] p-mono">
-            I had the pleasure of working with these awesome projects
-          </p>
-        </article>
-        <div className="mt-[84px]">
-          <WorksSlider />
+        <Scroll />
+        <div className="container mt-[64px]">
+          <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
+            <h2 className="h1-ubuntu text-jade capitalize">works</h2>
+            <Image
+              className="mt-[16px]"
+              src="/shape/line.svg"
+              width={250}
+              height={12}
+              alt="line"
+              
+            ></Image>
+            <p className="mt-[16px] p-mono">
+              I had the pleasure of working with these awesome projects
+            </p>
+          </article>
+          <div className="mt-[84px]">
+            <WorksSlider />
+          </div>
         </div>
       </section>
       {/* Blogs */}
@@ -327,15 +343,16 @@ export default async function Home() {
         id="blogs"
       >
         <Scroll />
-        <div className="container">
+        <div className="container mt-[64px]">
           <article className="max-w-[300px] md:max-w-full mx-auto flex flex-col items-center text-center">
             <h2 className="h1-ubuntu text-jade capitalize">blogs</h2>
             <Image
               className="mt-[16px]"
-              src="/line.svg"
+              src="/shape/line.svg"
               width={250}
               height={12}
               alt="line"
+              
             ></Image>
             <p className="mt-[16px] p-mono">
               My thoughts on technology and business, welcome to subscribe
@@ -353,6 +370,7 @@ export default async function Home() {
                   width={120}
                   height={120}
                   alt={post.img.alt}
+                  
                 ></Image>
               </div>
               <div>
@@ -431,10 +449,11 @@ export default async function Home() {
             <h2 className="h1-ubuntu text-jade capitalize">contact</h2>
             <Image
               className="mt-[16px]"
-              src="/line.svg"
+              src="/shape/line.svg"
               width={250}
               height={12}
               alt="line"
+              
             ></Image>
             <p className="mt-[16px] p-mono">
               I’m currently available for freelance work
@@ -505,10 +524,11 @@ export default async function Home() {
               >
                 send message
                 <Image
-                  src="/icon-send.svg"
+                  src="/icon/icon-send.svg"
                   width={24}
                   height={24}
                   alt="icon-send.svg"
+                  
                 ></Image>
               </button>
             </form>

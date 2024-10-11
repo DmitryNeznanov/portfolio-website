@@ -1,12 +1,8 @@
 ### Tasks
 
 - Mobile search/full width search icon
-- Skills bg fix
-- hgroup
-- public folder
-- Navigation
-- img footer
-- 
+- Scrollspy
+  
 ### Quistions ?
 
 - Slider ?

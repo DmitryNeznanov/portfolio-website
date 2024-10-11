@@ -14,7 +14,7 @@ export default function Header() {
             <Link href="/">
               <Image
                 className="max-w-[153px] max-h-[20px] md:max-w-[225px] sm:max-h-[32px] 2xl:max-w-297 2xl:max-h-42"
-                src="/logo.svg"
+                src="/icon/logo.svg"
                 width={297}
                 height={42}
                 alt="logo"
@@ -46,11 +46,11 @@ export default function Header() {
               {[
                 [
                   "instagram",
-                  "/icon-instagram.svg",
+                  "icon/icon-instagram.svg",
                   "https://www.instagram.com/",
                 ],
-                ["discord", "/icon-discord.svg", "https://discord.com/"],
-                ["github", "/icon-github.svg", "https://github.com/"],
+                ["discord", "icon/icon-discord.svg", "https://discord.com/"],
+                ["github", "icon/icon-github.svg", "https://github.com/"],
               ].map(([text, src, link], i) => {
                 return (
                   <li key={i}>
@@ -61,7 +61,7 @@ export default function Header() {
                     >
                       <Image
                         className="inline"
-                        src={src}
+                        src={`/${src}`}
                         alt={src}
                         width={20}
                         height={20}

@@ -53,10 +53,11 @@ export default async function Post({ params }: { params: { id: string } }) {
               download={true}
             >
               <Image
-                src="/icon-share.svg"
+                src="/icon/icon-share.svg"
                 width={16}
                 height={16}
                 alt="icon-share.svg"
+                
               ></Image>
             </Link>
           </div>
@@ -67,6 +68,8 @@ export default async function Post({ params }: { params: { id: string } }) {
               width={720}
               height={400}
               alt={post.img.alt}
+              priority={true}
+              
             ></Image>
           </div>
           <div className="mt-[32px] flex flex-col gap-y-[50px]">
@@ -170,10 +173,11 @@ export default async function Post({ params }: { params: { id: string } }) {
               download={true}
             >
               <Image
-                src="/icon-share.svg"
+                src="/icon/icon-share.svg"
                 width={16}
                 height={16}
                 alt="icon-share.svg"
+                
               ></Image>
             </Link>
           </div>
@@ -204,6 +208,7 @@ export default async function Post({ params }: { params: { id: string } }) {
                       width={120}
                       height={120}
                       alt={post.img.alt}
+                      
                     ></Image>
                   </div>
                   <div>
