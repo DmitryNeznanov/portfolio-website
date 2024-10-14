@@ -5,6 +5,7 @@ import WorksSlider from "./components/WorksSlider"
 import Link from "next/link"
 import db from "@/lib/mongodb"
 import NavigationBar from "./components/NavigationBar"
+import ContactForm from "./components/ContantForm"
 export const metadata: Metadata = {
   title: "Web-portfolio",
   description: "This is a home page of Web-portfolio",
@@ -39,7 +40,6 @@ export default async function Home() {
                     width={96}
                     height={96}
                     alt="sinan.png"
-                    
                   ></Image>
                 </div>
                 <hgroup className="mt-[16px]">
@@ -73,7 +73,6 @@ export default async function Home() {
                           width={14}
                           height={14}
                           alt={src}
-                          
                         ></Image>
                         <Link
                           className={`${
@@ -114,7 +113,6 @@ export default async function Home() {
                   width={20}
                   height={20}
                   alt="icon-download.svg"
-                  
                 ></Image>
               </a>
             </section>
@@ -152,7 +150,6 @@ export default async function Home() {
                       width={24}
                       height={24}
                       alt="icon-mail.svg"
-                      
                     ></Image>
                   </div>
                 </a>
@@ -227,7 +224,6 @@ export default async function Home() {
               width={462}
               height={630}
               alt="about"
-              
             ></Image>
           </div>
         </div>
@@ -248,7 +244,6 @@ export default async function Home() {
               width={250}
               height={12}
               alt="line"
-              
             ></Image>
             <p className="mt-[16px] p-mono">
               I am striving to never stop learning and improving
@@ -271,7 +266,6 @@ export default async function Home() {
                     width={32}
                     height={32}
                     alt={src}
-                    
                   ></Image>
                   <h4 className="mt-[8px] text-black menu-mono">{title}</h4>
                   <p className="mt-[8px] text-black p-mono">{text}</p>
@@ -299,7 +293,6 @@ export default async function Home() {
                       width={64}
                       height={64}
                       alt={src}
-                      
                     ></Image>
                   </div>
                   <h3 className={`mt-[24px] h2-mono uppercase text-${color}`}>
@@ -326,7 +319,6 @@ export default async function Home() {
               width={250}
               height={12}
               alt="line"
-              
             ></Image>
             <p className="mt-[16px] p-mono">
               I had the pleasure of working with these awesome projects
@@ -352,7 +344,6 @@ export default async function Home() {
               width={250}
               height={12}
               alt="line"
-              
             ></Image>
             <p className="mt-[16px] p-mono">
               My thoughts on technology and business, welcome to subscribe
@@ -370,7 +361,6 @@ export default async function Home() {
                   width={120}
                   height={120}
                   alt={post.img.alt}
-                  
                 ></Image>
               </div>
               <div>
@@ -453,7 +443,6 @@ export default async function Home() {
               width={250}
               height={12}
               alt="line"
-              
             ></Image>
             <p className="mt-[16px] p-mono">
               I’m currently available for freelance work
@@ -466,72 +455,9 @@ export default async function Home() {
             >
               send me a message
             </h2>
-            <form
-              className="max-w-[1120px] mt-[64px] mx-auto"
-              action=""
-            >
-              <div className="flex flex-row gap-x-[24px] md:gap-x-[64px] xl:gap-x-[126px]">
-                <div className="flex w-[50%] flex-col">
-                  <label
-                    className="p-ubuntu text-jade"
-                    htmlFor="name"
-                  >
-                    Your name *
-                  </label>
-                  <input
-                    className="mt-[24px] input-primary"
-                    name="name"
-                    id="name"
-                    type="text"
-                    placeholder="Enter your name"
-                  ></input>
-                </div>
-                <div className="flex w-[50%] flex-col">
-                  <label
-                    className="p-ubuntu text-jade"
-                    htmlFor="email"
-                  >
-                    Your email *
-                  </label>
-                  <input
-                    className="mt-[24px] input-primary"
-                    name="email"
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                  ></input>
-                </div>
-              </div>
-              <div className="mt-[64px] flex flex-col">
-                <label
-                  className="p-ubuntu text-jade"
-                  htmlFor="email"
-                >
-                  Your message *
-                </label>
-                <textarea
-                  rows={6}
-                  className="mt-[24px] textarea-primary"
-                  name="message"
-                  id="message"
-                  placeholder="Enter your needs"
-                ></textarea>
-              </div>
-
-              <button
-                className="mt-[64px] mx-auto button-jade flex flex-row items-center gap-x-[16px]"
-                type="submit"
-              >
-                send message
-                <Image
-                  src="/icon/icon-send.svg"
-                  width={24}
-                  height={24}
-                  alt="icon-send.svg"
-                  
-                ></Image>
-              </button>
-            </form>
+            <div className="max-w-[1120px] mt-[64px] mx-auto">
+              <ContactForm />
+            </div>
           </section>
         </div>
       </section>

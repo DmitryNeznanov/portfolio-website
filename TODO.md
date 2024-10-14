@@ -2,6 +2,9 @@
 
 - Mobile search/full width search icon
 - Scrollspy
+- HamburgerMenu
+- skills fix
+- input autoselection
   
 ### Quistions ?
 
