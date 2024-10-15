@@ -16,7 +16,8 @@ export default async function Home() {
     .find()
     .sort({ date: 1 })
     .toArray()) as Post[]
-  const post = posts[0]
+  const post: Post = posts[0]
+
   return (
     <>
       {/* Hero */}
@@ -286,7 +287,8 @@ export default async function Home() {
                   key={i}
                 >
                   <div
-                    className={`p-[24px] md:p-[40px] max-w-max rounded-full bg-${color}`}
+                    className="p-[24px] md:p-[40px] max-w-max rounded-full bg-${color}"
+                    style={{ backgroundColor: `var(--${color})` }}
                   >
                     <Image
                       src={`/${src}`}
@@ -295,7 +297,10 @@ export default async function Home() {
                       alt={src}
                     ></Image>
                   </div>
-                  <h3 className={`mt-[24px] h2-mono uppercase text-${color}`}>
+                  <h3
+                    className="mt-[24px] h2-mono uppercase text-${color}"
+                    style={{ color: `var(--${color})` }}
+                  >
                     {title}
                   </h3>
                 </article>

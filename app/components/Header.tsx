@@ -1,11 +1,11 @@
-"use client"
+// "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import Seacrh from "./Seacrh"
+// import { usePathname } from "next/navigation"
+import Seacrh from "./Search"
 
 export default function Header() {
-  const pathName = usePathname()
+  // const pathName = usePathname()
   return (
     <>
       <header className="container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
@@ -29,14 +29,14 @@ export default function Header() {
               ].map(([text, link], i) => {
                 return (
                   <li key={i}>
-                    <Link
+                    {/* <Link
                       className={`${
                         pathName === link ? "text-jade" : ""
                       } capitalize menu-mono`}
                       href={link}
                     >
                       {text}
-                    </Link>
+                    </Link> */}
                   </li>
                 )
               })}

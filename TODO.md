@@ -2,9 +2,8 @@
 
 - Mobile search/full width search icon
 - Scrollspy
-- HamburgerMenu
-- skills fix
 - input autoselection
+- suspence
   
 ### Quistions ?
 
@@ -12,3 +11,6 @@
 - Rem ?
 
 ### Draft
+
+- remove client from header, fecth data in Search throught searcParams prop, change URLsearchParams inside SearchForm ?
+- ty useEffect ?
