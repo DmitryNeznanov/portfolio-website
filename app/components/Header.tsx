@@ -1,14 +1,13 @@
-// "use client"
 import Image from "next/image"
 import Link from "next/link"
-// import { usePathname } from "next/navigation"
 import Seacrh from "./Search"
+import DynamicLinks from "./DynamicLinks"
 
 export default function Header() {
-  // const pathName = usePathname()
   return (
     <>
-      <header className="container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
+      <header className="relative container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
+        
         <nav className="flex flex-row items-center justify-between">
           <div>
             <Link href="/">
@@ -22,25 +21,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex flex-row">
-            <ul className="flex flex-row gap-x-[16px] md:gap-x-[32px]">
-              {[
-                ["home", "/"],
-                ["blogs", "/blog"],
-              ].map(([text, link], i) => {
-                return (
-                  <li key={i}>
-                    {/* <Link
-                      className={`${
-                        pathName === link ? "text-jade" : ""
-                      } capitalize menu-mono`}
-                      href={link}
-                    >
-                      {text}
-                    </Link> */}
-                  </li>
-                )
-              })}
-            </ul>
+            <DynamicLinks />
             <Seacrh />
             <ul className="hidden md:flex gap-x-[32px] items-center">
               {[

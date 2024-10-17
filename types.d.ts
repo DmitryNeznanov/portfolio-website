@@ -2,7 +2,7 @@ interface Post {
   _id: ObjectId
   title: string
   body: string
-  date: Date
+  date: date
   tags: string[]
   read: number
   author: string

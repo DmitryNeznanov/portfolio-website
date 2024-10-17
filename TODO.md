@@ -2,8 +2,7 @@
 
 - Mobile search/full width search icon
 - Scrollspy
-- input autoselection
-- suspence
+- seacrh by tags
   
 ### Quistions ?
 
@@ -11,6 +10,3 @@
 - Rem ?
 
 ### Draft
-
-- remove client from header, fecth data in Search throught searcParams prop, change URLsearchParams inside SearchForm ?
-- ty useEffect ?
