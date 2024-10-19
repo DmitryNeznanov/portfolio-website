@@ -1,17 +1,62 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useLayoutEffect, useState } from "react"
 export default function NavigationBar() {
-  const [index, setIndex] = useState(1)
-  function handleClick(i: number) {
-    setIndex(i + 1)
+  const [activeId, setActiveId] = useState("")
+
+  // Restrict value to be between the range [0, value]
+  function clamp(value: number) {
+    const clamp = Math.max(0, value)
+    return clamp
   }
+  // Check if number is between two values
+  function isBetween(value: number, floor: number, ceil: number) {
+    const between = value >= floor && value <= ceil
+    return between
+  }
+  function useScrollspy(ids: string[], offset: number = 0) {
+    useLayoutEffect(() => {
+      function listener() {
+        const scroll = window.scrollY
+
+        const position = ids
+          .map((id) => {
+            const element = document.getElementById(id)
+
+            if (!element) return { id, top: -1, bottom: -1 }
+
+            const rect = element.getBoundingClientRect()
+            const top = clamp(rect.top + scroll - offset)
+            const bottom = clamp(rect.bottom + scroll - offset)
+
+            return { id, top, bottom }
+          })
+          .find(({ top, bottom }) => isBetween(scroll, top, bottom))
+
+        setActiveId(position?.id || "hero")
+      }
+
+      listener()
+
+      window.addEventListener("resize", listener)
+      window.addEventListener("scroll", listener)
+
+      return () => {
+        window.removeEventListener("resize", listener)
+        window.removeEventListener("scroll", listener)
+      }
+    }, [ids, offset])
+
+    return activeId
+  }
+  const ids = ["hero", "about", "skills", "works", "blogs", "contact"]
+  const activeLinkId = useScrollspy(ids, 10)
   return (
     <nav>
       <ul className="w-max px-[12px] py-[8px] flex flex-col gap-y-[24px] items-center bg-black border border-white rounded-full">
         {[
-          ["icon/icon-grid-white.svg", "icon/icon-grid-black.svg", "/#"],
+          ["icon/icon-grid-white.svg", "icon/icon-grid-black.svg", "/#hero"],
           ["icon/icon-user-white.svg", "icon/icon-user-black.svg", "/#about"],
           ["icon/icon-code-white.svg", "icon/icon-code-black.svg", "/#skills"],
           [
@@ -26,19 +71,17 @@ export default function NavigationBar() {
             <li key={i}>
               <Link
                 className={`block p-[8px] rounded-full ${
-                  index === i + 1 ? "bg-white" : "bg-transparent"
+                  href.includes(activeLinkId) ? "bg-white" : "bg-transparent"
                 }`}
                 href={href}
-                onClick={() => {
-                  handleClick(i)
-                }}
               >
                 <Image
-                  src={`/${index === i + 1 ? iconBlack : iconWhite}`}
+                  src={`/${
+                    href.includes(activeLinkId) ? iconBlack : iconWhite
+                  }`}
                   width={24}
                   height={24}
-                  alt={index === i + 1 ? iconBlack : iconWhite}
-                  
+                  alt={href.includes(activeLinkId) ? iconBlack : iconWhite}
                 ></Image>
               </Link>
             </li>
