@@ -10,7 +10,10 @@ export default async function Search() {
 
   return (
     <>
-      <div id="search">
+      <div
+        className="hidden"
+        id="search"
+      >
         <SearchForm data={data} />
       </div>
     </>

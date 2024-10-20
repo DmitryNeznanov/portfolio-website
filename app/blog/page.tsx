@@ -36,11 +36,10 @@ export default async function Blog() {
       >
         Subscribe My Blogs
       </Link>
-      <Suspense />
       <Suspense
         fallback={<h2 className="h1-ubuntu text-jade">Posts is loading...</h2>}
       >
-        <section className="max-w-[1052px] mx-auto flex flex-col gap-y-[64px] mt-[64px] border-t border-white">
+        <section className="max-w-[1052px] mx-auto flex flex-col gap-y-[64px] mt-[64px] first:border-t">
           {posts.map((post: Post) => {
             return (
               <article

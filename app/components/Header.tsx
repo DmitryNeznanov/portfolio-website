@@ -7,9 +7,8 @@ import ToggleSearch from "./ToggleSearch"
 export default function Header() {
   return (
     <>
-      <header className="relative container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
+      <header className="container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
         <Seacrh />
-
         <nav className="flex flex-row items-center justify-between">
           <div>
             <Link href="/">
