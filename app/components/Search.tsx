@@ -10,7 +10,9 @@ export default async function Search() {
 
   return (
     <>
-      <SearchForm data={data} />
+      <div id="search">
+        <SearchForm data={data} />
+      </div>
     </>
   )
 }

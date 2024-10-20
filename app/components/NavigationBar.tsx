@@ -5,16 +5,6 @@ import { useLayoutEffect, useState } from "react"
 export default function NavigationBar() {
   const [activeId, setActiveId] = useState("")
 
-  // Restrict value to be between the range [0, value]
-  function clamp(value: number) {
-    const clamp = Math.max(0, value)
-    return clamp
-  }
-  // Check if number is between two values
-  function isBetween(value: number, floor: number, ceil: number) {
-    const between = value >= floor && value <= ceil
-    return between
-  }
   function useScrollspy(ids: string[], offset: number = 0) {
     useLayoutEffect(() => {
       function listener() {
@@ -24,15 +14,13 @@ export default function NavigationBar() {
           .map((id) => {
             const element = document.getElementById(id)
 
-            if (!element) return { id, top: -1, bottom: -1 }
-
-            const rect = element.getBoundingClientRect()
-            const top = clamp(rect.top + scroll - offset)
-            const bottom = clamp(rect.bottom + scroll - offset)
+            const rect = element!.getBoundingClientRect()
+            const top = rect.top + scroll - offset
+            const bottom = rect.bottom + scroll - offset
 
             return { id, top, bottom }
           })
-          .find(({ top, bottom }) => isBetween(scroll, top, bottom))
+          .find(({ top, bottom }) => scroll >= top && scroll <= bottom)
 
         setActiveId(position?.id || "hero")
       }

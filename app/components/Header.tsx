@@ -2,12 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import Seacrh from "./Search"
 import DynamicLinks from "./DynamicLinks"
+import ToggleSearch from "./ToggleSearch"
 
 export default function Header() {
   return (
     <>
       <header className="relative container px-[24px] md:px-[32px] xl:px-[128px] py-[24px] xl:py-[64px]">
-        
+        <Seacrh />
+
         <nav className="flex flex-row items-center justify-between">
           <div>
             <Link href="/">
@@ -22,7 +24,7 @@ export default function Header() {
           </div>
           <div className="flex flex-row">
             <DynamicLinks />
-            <Seacrh />
+            <ToggleSearch />
             <ul className="hidden md:flex gap-x-[32px] items-center">
               {[
                 [
