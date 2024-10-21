@@ -39,11 +39,11 @@ export default async function Blog() {
       <Suspense
         fallback={<h2 className="h1-ubuntu text-jade">Posts is loading...</h2>}
       >
-        <section className="max-w-[1052px] mx-auto flex flex-col gap-y-[64px] mt-[64px] first:border-t">
+        <section className="max-w-[1052px] mx-auto flex flex-col mt-[64px] border-t">
           {posts.map((post: Post) => {
             return (
               <article
-                className="py-[32px] px-[14px] flex flex-col md:flex-row items-center md:items-start gap-y-[32px] md:gap-y-0 md:gap-x-[32px] border-b border-white"
+                className="py-[32px] lg:py-[64px] px-[14px] flex flex-col md:flex-row items-center md:items-start gap-y-[32px] md:gap-y-0 md:gap-x-[32px] border-b border-white"
                 key={post._id}
               >
                 <div className="">

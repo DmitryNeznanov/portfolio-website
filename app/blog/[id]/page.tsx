@@ -197,13 +197,12 @@ export default async function Post({ params }: { params: { id: string } }) {
             <h2 className="text-center h2-ubuntu text-jade md:h1-ubuntu md:text-jade capitalize">
               You might also like
             </h2>
-            <section className="mx-auto flex flex-col gap-y-[64px] max-w-[1052px] mt-[64px] first:border-t">
+            <section className="mx-auto flex flex-col gap-y-[64px] max-w-[1052px] mt-[64px] border-t">
               <Suspense
                 fallback={
                   <h2 className="h1-ubuntu text-jade">Posts is loading...</h2>
                 }
               >
-                {" "}
                 {posts.map((post: Post) => {
                   return (
                     <article

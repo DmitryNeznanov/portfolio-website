@@ -2,11 +2,9 @@
 
 - seacrh by tags
 - hotkey for search
-- fix posts
-- posts was not founded
-- responsive for search
-- placeholder input
-- close search when click link
+- usePortal for search?
+- DynamicLinks fix
+
 ### Quistions ?
 
 - Slider ?

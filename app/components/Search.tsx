@@ -1,5 +1,6 @@
 import db from "@/lib/mongodb"
 import SearchForm from "./SearchForm"
+
 export default async function Search() {
   const posts = (await db
     .collection("posts")
@@ -9,13 +10,11 @@ export default async function Search() {
   const data: Post[] = JSON.parse(JSON.stringify(posts))
 
   return (
-    <>
-      <div
-        className="hidden"
-        id="search"
-      >
-        <SearchForm data={data} />
-      </div>
-    </>
+    <div
+      className="hidden"
+      id="search"
+    >
+      <SearchForm data={data} />
+    </div>
   )
 }

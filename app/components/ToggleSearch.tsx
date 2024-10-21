@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image"
+import { useLayoutEffect } from "react"
 
 export default function ToggleSearch() {
   function toggleSearch() {
@@ -9,13 +10,15 @@ export default function ToggleSearch() {
     document.body.classList.toggle("overflow-hidden")
     searchInput?.focus()
   }
-  // function test(event) {
-  //   if (event.key === "a") {
-  //     event.preventDefault()
-  //     const search = document.getElementById("search")
-  //     search?.classList.toggle("hidden")
-  //   }
-  // }
+
+  useLayoutEffect(() => {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "a") {
+        event.preventDefault()
+        toggleSearch()
+      }
+    })
+  })
   return (
     <>
       <button
